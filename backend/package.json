@@ -8,6 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
+     "lint-staged": "lint-staged",
     "lint-fix": "eslint .--fix",
     "prepare": "husky install"
   },
@@ -29,8 +30,7 @@
     "lint-staged": "^16.0.0"
   },
   "lint-staged": {
-    "**/*.js": [
-      "eslint --fix"
-    ]
+    "*.js": "eslint --fix",
+    "*.css": "stylelint --fix"
   }
 }
