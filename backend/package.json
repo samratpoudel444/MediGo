@@ -8,7 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-     "lint-staged": "lint-staged",
+    "lint-staged": "lint-staged",
     "lint-fix": "eslint .--fix",
     "prepare": "husky install"
   },
@@ -18,7 +18,8 @@
   "dependencies": {
     "dotenv": "^16.5.0",
     "mongodb": "^6.16.0",
-    "mongoose": "^8.14.2"
+    "mongoose": "^8.14.2",
+    "yup": "^1.6.1"
   },
   "type": "module",
   "devDependencies": {
