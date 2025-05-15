@@ -12,7 +12,7 @@ const app= express();
 
 app.use(express.json());
 
-connectDB()
+connectDB();
 app.use("/api/v1", authRouter);
 app.use(errorHandler);
 
