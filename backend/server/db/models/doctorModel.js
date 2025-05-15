@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { date, string } from "yup";
+// import { date, string } from "yup";
 
 const doctorSchema = new mongoose.Schema({
   userId: {
