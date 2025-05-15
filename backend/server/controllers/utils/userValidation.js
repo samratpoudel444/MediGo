@@ -31,3 +31,4 @@ export const verifyData = yup.object({
     .min(-180, "lognitude must be between -180 and 180")
     .max(180, "lognitude must be between -180 and 180"),
 });
+

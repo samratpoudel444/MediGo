@@ -16,8 +16,12 @@
   "license": "ISC",
   "description": "The medical prescription system(MediGo) is an integrated healthcare platform de- signed to streamline the process of prescription handling and medicine accessibility for patients. The system allows users to book appointments with doctors, upload prescription images, and automatically extract medicine details using Optical Character Recogni- tion (OCR) technology. Once the prescription is processed, The medical prescription system(MediGo) provides users with comprehensive information about the prescribed medicines, including usage, and side effects. The system further enhances convenience by suggesting nearby pharmacies that are likely to stock the medicines and providing the shortest navigation route using Maps API. By digitizing prescriptions and facilitating access to medicine information and location services, The medical prescription sys- tem(MediGo) reduces patient confusion, minimizes manual errors, and promotes timely medication adherence. The platform is accessible from any internet-enabled device and offers a secure, efficient, and user-friendly experience, ultimately contributing to improved healthcare delivery and patient outcomes. ",
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
     "dayjs": "^1.11.13",
     "dotenv": "^16.5.0",
+    "json-web-token": "^3.2.0",
+    "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.16.0",
     "mongoose": "^8.14.2",
     "yup": "^1.6.1"
