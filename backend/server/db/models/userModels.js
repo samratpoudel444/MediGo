@@ -42,7 +42,7 @@ import mongoose from "mongoose";
      type: String,
      required: true,
      trim: true,
-     enum: ["Patient", "Doctor", "Admin"],
+     enum: ["Patient", "Admin", "Doctor"],
    },
    address: {
      type: String,

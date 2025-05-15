@@ -1,6 +1,8 @@
-import express from "express";
-import { verifyData } from "../utils/userValidation.js";
+import dotenv from "dotenv";
 import UserTable from "../../db/models/userModels.js";
+import { verifyData } from "../utils/userValidation.js";
+dotenv.config();
+
 
 export const signUpUser = async (req, res, next) => {
 	try {
