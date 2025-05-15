@@ -1,6 +1,9 @@
-import express from "express";
 import { verifyData } from "../utils/userValidation.js";
 import UserTable from "../../db/models/userModels.js";
+import bcrypt from 'bcrypt';
+import dotenv from "dotenv";
+dotenv.config();
+
 
 export const signUpUser = async (req, res, next) => {
   try {
@@ -22,6 +25,13 @@ export const signUpUser = async (req, res, next) => {
       });
     }
 
+
+    const hashedPassword= await bcrypt.hash(validateUser.password, 10);
+    
+    validateUser.password= hashedPassword;
+
+    const payload= validateUser.email;
+    
     const newUser = await UserTable.create(validateUser);
 
     return res.status(201).json({ message: "User created sucessfully" });
