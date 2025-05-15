@@ -5,7 +5,7 @@ const doctorSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
-    required: "true",
+    required: true,
     unique: true,
   },
   licenseNo: {
@@ -16,13 +16,13 @@ const doctorSchema = new mongoose.Schema({
     unique: true,
   },
   degreeType: {
-    type: string,
+    type: String,
     trim: true,
     required: true,
     enum: ["MBBS", "MD", "DM"],
   },
-  specialist: {
-    type: string,
+  specialistType: {
+    type: String,
     required: true,
     trim: true,
     enum: ["General", "Surgery", "Internal Medicine", "Pediatrics",
@@ -32,4 +32,4 @@ const doctorSchema = new mongoose.Schema({
 
 const DoctorTable = mongoose.model("doctor", doctorSchema);
 
-export default doctorSchema;
+export default DoctorTable;

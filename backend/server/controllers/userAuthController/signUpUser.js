@@ -2,11 +2,13 @@ import { verifyData } from "../utils/userValidation.js";
 import UserTable from "../../db/models/userModels.js";
 import bcrypt from 'bcrypt';
 import dotenv from "dotenv";
+import DoctorTable from "../../db/models/doctorModel.js";
 dotenv.config();
 
 
 export const signUpUser = async (req, res, next) => {
   try {
+  
     if (!req.body.role) {
       req.body.role = "patient";
     }
@@ -30,9 +32,20 @@ export const signUpUser = async (req, res, next) => {
     
     validateUser.password= hashedPassword;
 
-    const payload= validateUser.email;
-    
     const newUser = await UserTable.create(validateUser);
+
+    if( req.body.role === 'Doctor')
+    {
+      const userId = newUser._id;
+  
+      const doctorData= {userId,
+         "specialistType":req.body.specialistType,
+        "licenseNo":req.body.licenseNo,
+        "degreeType":req.body.degreeType
+      };
+      const newDoctor= await DoctorTable.create(doctorData);
+      return res.status(201).json({ message: "Doctor account created sucessfully" });
+    }
 
     return res.status(201).json({ message: "User created sucessfully" });
   } catch (err) {

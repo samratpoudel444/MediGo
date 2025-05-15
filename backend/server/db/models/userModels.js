@@ -50,7 +50,7 @@ import mongoose from "mongoose";
      trim: true,
      maxlength: 255,
    },
-   lognitude: {
+   longitude: {
      type: Number,
      required: true,
      min: -90,
