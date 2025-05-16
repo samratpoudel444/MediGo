@@ -1,6 +1,8 @@
+
+import UserTable from "../../db/models/userModels.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import UserTable from "../../db/models/userModels.js";
+import cookieParser from "cookie-parser";
 
 export const signInUsers = async (req, res, next) => {
   const loginCredintials = req.body;
