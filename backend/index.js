@@ -16,7 +16,7 @@ const app= express();
 app.use(express.json());
 app.use(cookieParser())
 
-connectDB()
+connectDB();
 app.use("/api/v1", authRouter);
 app.use("/api/v1", doctorRouter)
 app.use(errorHandler);

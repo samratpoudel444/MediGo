@@ -1,31 +1,35 @@
+
 import { verifyData } from "../utils/userValidation.js";
 import UserTable from "../../db/models/userModels.js";
 import bcrypt from 'bcrypt';
 import dotenv from "dotenv";
 import DoctorTable from "../../db/models/doctorModel.js";
+
 dotenv.config();
 
 
 export const signUpUser = async (req, res, next) => {
+
   try {
   
     if (!req.body.role) {
       req.body.role = "patient";
     }
 
-    const validateUser = await verifyData.validate(req.body, {
-      abortEarly: false,
-    });
 
-    const checkIfUserExist = await UserTable.findOne({
-      email: validateUser.email,
-    });
-    if (checkIfUserExist) {
-      return next({
-        code: 409,
-        message: "Provided email with user already exists",
-      });
-    }
+		const validateUser = await verifyData.validate(req.body, {
+			abortEarly: false,
+		});
+
+		const checkIfUserExist = await UserTable.findOne({
+			email: validateUser.email,
+		});
+		if (checkIfUserExist) {
+			return next({
+				code: 409,
+				message: "Provided email with user already exists",
+			});
+		}
 
 
     const hashedPassword= await bcrypt.hash(validateUser.password, 10);
@@ -54,6 +58,6 @@ export const signUpUser = async (req, res, next) => {
       return next({ code: 400, message: err.errors });
     }
 
-    return next({ code: 500, message: "Internal server error" });
-  }
+		return next({ code: 500, message: "Internal server error" });
+	}
 };
