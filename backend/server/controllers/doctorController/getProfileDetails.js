@@ -1,4 +1,5 @@
 import DoctorTable from "../../db/models/doctorModel.js";
+import UserTable from "../../db/models/userModels.js";
 
 
 export const getDoctorProfile= async(req, res, next)=>
