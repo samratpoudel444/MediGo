@@ -11,7 +11,8 @@ dotenv.config();
 export const signUpUser = async (req, res, next) => {
 
   try {
-  
+
+    console.log(req.body)
     if (!req.body.role) {
       req.body.role = "patient";
     }

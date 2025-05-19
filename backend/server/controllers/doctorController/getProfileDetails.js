@@ -5,10 +5,10 @@ import UserTable from "../../db/models/userModels.js";
 export const getDoctorProfile= async(req, res, next)=>
 {
     try{
-        const doctorId= req.query;
-     const data= await DoctorTable.findById({_id: "6825b399c95a77f08c7f7d69"}).populate('userId') 
-        console.log(data)
-  
+    const doctorId= req.query;
+     const data= await DoctorTable.findById({_id: "6825b399c95a77f08c7f7d69"}).populate('userId')
+     console.log(data)
+
   }
     catch(err)
     {

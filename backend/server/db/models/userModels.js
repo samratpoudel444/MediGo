@@ -50,7 +50,7 @@ import mongoose from "mongoose";
      trim: true,
      maxlength: 255,
    },
-   lognitude: {
+   longitude: {
      type: Number,
      required: true,
      min: -90,
@@ -62,6 +62,12 @@ import mongoose from "mongoose";
      min: -180,
      max: 180,
    },
+  //  doctorDetails: {
+  //    type: mongoose.Schema.Types.ObjectId,
+  //    ref: "doctor",
+  //    required: true,
+  //    unique: true,
+  //  },
  });
 
 const UserTable = mongoose.model('User', userSchema);
