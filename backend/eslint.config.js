@@ -10,8 +10,23 @@ export default defineConfig([
     plugins: {
       prettier: prettierPlugin,
     },
+    languageOptions: {
+      ecmaVersion: 2021,
+      sourceType: "module",
+      globals: {
+        console: "readonly",
+        process: "readonly",
+        __dirname: "readonly",
+        module: "readonly",
+        require: "readonly",
+      },
+    },
     rules: {
       "prettier/prettier": "error",
+      "no-unused-vars": [
+        "warn",
+        { vars: "all", args: "after-used", ignoreRestSiblings: true },
+      ],
     },
   },
 ]);

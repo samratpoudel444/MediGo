@@ -1,8 +1,6 @@
-
 import UserTable from "../../db/models/userModels.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import cookieParser from "cookie-parser";
 
 export const signInUsers = async (req, res, next) => {
   const loginCredintials = req.body;
@@ -20,7 +18,7 @@ export const signInUsers = async (req, res, next) => {
 
     const isPasswordCorrect = await bcrypt.compare(
       plainPassword,
-      hashedPassword
+      hashedPassword,
     );
 
     if (!isPasswordCorrect) {
@@ -35,13 +33,16 @@ export const signInUsers = async (req, res, next) => {
     const accessToken = jwt.sign(payload, secretKey, { expiresIn: "1d" });
     const refreshToken = jwt.sign(payload, secretKey, { expiresIn: "7d" });
 
-    return res.cookie("token", accessToken, {
-            httpOnly: true,
-          })
-          .cookie("refreshToken", refreshToken, {
-            httpOnly: true,
-            sameSite: "strict",
-          }).status(201).json({ message: "User LoggedIn Successfully" });
+    return res
+      .cookie("token", accessToken, {
+        httpOnly: true,
+      })
+      .cookie("refreshToken", refreshToken, {
+        httpOnly: true,
+        sameSite: "strict",
+      })
+      .status(201)
+      .json({ message: "User LoggedIn Successfully" });
   } catch (err) {
     console.log(err);
     return next({ code: 500, message: "Internal server error" });

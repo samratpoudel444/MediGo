@@ -25,8 +25,17 @@ const doctorSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
-    enum: ["General", "Surgery", "Internal Medicine", "Pediatrics",
-      "Gynecology", "Orthopedics", "Neurology", "Oncology", "Others"],
+    enum: [
+      "General",
+      "Surgery",
+      "Internal Medicine",
+      "Pediatrics",
+      "Gynecology",
+      "Orthopedics",
+      "Neurology",
+      "Oncology",
+      "Others",
+    ],
   },
 });
 

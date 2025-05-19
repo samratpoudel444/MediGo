@@ -12,10 +12,21 @@ export const verifyData = yup.object({
     .matches(/[a-z]/, "Password must contain at least one lowercase letter")
     .matches(/[A-Z]/, "Password must contain at least one uppercase letter")
     .matches(/[0-9]/, "Password must contain at least one number")
-    .matches(/[@$!%*?&]/, "Password must contain at least one special character"),
+    .matches(
+      /[@$!%*?&]/,
+      "Password must contain at least one special character",
+    ),
   dob: yup.date().max(dayjs(), "DOB cannot be a future date").notRequired(),
-  gender: yup.string().required("Gender is required").trim().oneOf(["male", "female", "other"]),
-  role: yup.string().required("Role is required").trim().oneOf(["patient", "Doctor", "Admin"]),
+  gender: yup
+    .string()
+    .required("Gender is required")
+    .trim()
+    .oneOf(["male", "female", "other"]),
+  role: yup
+    .string()
+    .required("Role is required")
+    .trim()
+    .oneOf(["patient", "Doctor", "Admin"]),
   address: yup.string().required("Address is required").trim().max(255),
   latitude: yup
     .number()
@@ -28,35 +39,40 @@ export const verifyData = yup.object({
     .min(-180, "Longitude must be between -180 and 180")
     .max(180, "Longitude must be between -180 and 180"),
 
-
-  licenseNo: yup
-    .string()
-    .when("role", {
-      is: "Doctor",
-      then: (schema) => schema.required("License No is required")
+  licenseNo: yup.string().when("role", {
+    is: "Doctor",
+    then: (schema) =>
+      schema
+        .required("License No is required")
         .matches(/^\d{6,10}$/, "License No must be 6 to 10 digits"),
-      otherwise: (schema) => schema.notRequired(),
-    }),
+    otherwise: (schema) => schema.notRequired(),
+  }),
 
-  degreeType: yup
-    .string()
-    .when("role", {
-      is: "Doctor",
-      then: (schema) => schema.required("Degree Type is required")
+  degreeType: yup.string().when("role", {
+    is: "Doctor",
+    then: (schema) =>
+      schema
+        .required("Degree Type is required")
         .oneOf(["MBBS", "MD", "DO", "BDS", "Other"]),
-      otherwise: (schema) => schema.notRequired(),
-    }),
+    otherwise: (schema) => schema.notRequired(),
+  }),
 
-  specialistType: yup
-    .string()
-    .when("role", {
-      is: "Doctor",
-      then: (schema) => schema.required("Specialty is required")
+  specialistType: yup.string().when("role", {
+    is: "Doctor",
+    then: (schema) =>
+      schema
+        .required("Specialty is required")
         .oneOf([
-          "General", "Surgery", "Internal Medicine", "Pediatrics",
-          "Gynecology", "Orthopedics", "Neurology", "Oncology", "Others"
+          "General",
+          "Surgery",
+          "Internal Medicine",
+          "Pediatrics",
+          "Gynecology",
+          "Orthopedics",
+          "Neurology",
+          "Oncology",
+          "Others",
         ]),
-      otherwise: (schema) => schema.notRequired(),
-    }),
+    otherwise: (schema) => schema.notRequired(),
+  }),
 });
-

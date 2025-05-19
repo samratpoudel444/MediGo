@@ -1,7 +1,5 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-import DoctorTable from "../db/models/doctorModel.js";
-import UserTable from "../db/models/userModels.js";
 dotenv.config({ path: "../../.env" });
 
 const connectDB = async () => {
