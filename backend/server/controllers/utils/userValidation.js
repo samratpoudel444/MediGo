@@ -26,7 +26,7 @@ export const verifyData = yup.object({
     .string()
     .required("Role is required")
     .trim()
-    .oneOf(["patient", "Doctor", "Admin"]),
+    .oneOf(["Patient", "Doctor", "Admin"]),
   address: yup.string().required("Address is required").trim().max(255),
   latitude: yup
     .number()

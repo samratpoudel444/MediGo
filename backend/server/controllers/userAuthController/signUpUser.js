@@ -8,15 +8,13 @@ dotenv.config();
 
 export const signUpUser = async (req, res, next) => {
   try {
-    console.log(req.body);
     if (!req.body.role) {
-      req.body.role = "patient";
+      req.body.role = "Patient";
     }
 
     const validateUser = await verifyData.validate(req.body, {
       abortEarly: false,
     });
-
     const checkIfUserExist = await UserTable.findOne({
       email: validateUser.email,
     });
@@ -42,7 +40,7 @@ export const signUpUser = async (req, res, next) => {
         licenseNo: req.body.licenseNo,
         degreeType: req.body.degreeType,
       };
-      const newDoctor = await DoctorTable.create(doctorData);
+      await DoctorTable.create(doctorData);
       return res
         .status(201)
         .json({ message: "Doctor account created sucessfully" });

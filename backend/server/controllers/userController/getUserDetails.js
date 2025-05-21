@@ -1,8 +1,7 @@
 import UserTable from "../../db/models/userModels.js";
 
-export const getUserDetails = async (req, res, next) => {
-  //const id = req.query;
-  const id = "6825b1de3e96997d37da25fd";
+export const getMyDetails = async (req, res, next) => {
+  const id = req.user.id;
   try {
     const data = await UserTable.findOne({ _id: id });
     if (!data) {

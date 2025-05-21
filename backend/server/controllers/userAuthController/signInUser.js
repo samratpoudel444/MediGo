@@ -7,6 +7,7 @@ export const signInUsers = async (req, res, next) => {
   try {
     const user = await UserTable.findOne({
       email: loginCredintials.email,
+      role: loginCredintials.role,
     });
 
     if (!user) {
@@ -27,8 +28,9 @@ export const signInUsers = async (req, res, next) => {
 
     const secretKey = process.env.JWT_SECRET;
     const payload = {
+      id: user._id,
       email: user.email,
-      isAdmin: false,
+      role: loginCredintials.role,
     };
     const accessToken = jwt.sign(payload, secretKey, { expiresIn: "1d" });
     const refreshToken = jwt.sign(payload, secretKey, { expiresIn: "7d" });
@@ -42,7 +44,7 @@ export const signInUsers = async (req, res, next) => {
         sameSite: "strict",
       })
       .status(201)
-      .json({ message: "User LoggedIn Successfully" });
+      .json({ message: "User LoggedIn Successfully", token: accessToken });
   } catch (err) {
     console.log(err);
     return next({ code: 500, message: "Internal server error" });
