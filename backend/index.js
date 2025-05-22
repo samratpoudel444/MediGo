@@ -5,7 +5,9 @@ import authRouter from "./server/routes/authRoute/authRoute.js";
 import doctorRouter from "./server/routes/authRoute/doctorRoute.js";
 import connectDB from "./server/helper/dbHelper.js";
 import cookieParser from "cookie-parser";
-import userRouter from "./server/routes/authRoute/userRoute.js";
+import userRouter from "./server/routes/authRoute/patientRoute.js";
+import adminRouter from "./server/routes/adminRoute.js";
+
 
 dotenv.config();
 
@@ -19,6 +21,8 @@ connectDB();
 app.use("/api/v1", authRouter);
 app.use("/api/v1", doctorRouter);
 app.use("/api/v1", userRouter);
+app.use("/api/v1", adminRouter);
+
 app.use(errorHandler);
 
 app.listen(PORT, () => {
