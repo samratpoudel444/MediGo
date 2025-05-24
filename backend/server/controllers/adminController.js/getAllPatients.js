@@ -1,4 +1,4 @@
-import UserTable from "../../db/models/userModels";
+import UserTable from "../../db/models/userModels.js";
 
 
 export const getAllPatients= async(req, res, next)=>

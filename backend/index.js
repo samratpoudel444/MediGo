@@ -7,7 +7,7 @@ import connectDB from "./server/helper/dbHelper.js";
 import cookieParser from "cookie-parser";
 import userRouter from "./server/routes/authRoute/patientRoute.js";
 import adminRouter from "./server/routes/adminRoute.js";
-
+import appointmentRoute from "./server/routes/appointmentRoute.js";
 
 dotenv.config();
 
@@ -22,6 +22,7 @@ app.use("/api/v1", authRouter);
 app.use("/api/v1", doctorRouter);
 app.use("/api/v1", userRouter);
 app.use("/api/v1", adminRouter);
+app.use('/api/v1', appointmentRoute);
 
 app.use(errorHandler);
 

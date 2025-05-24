@@ -3,10 +3,11 @@ import DoctorTable from "../../db/models/doctorModel.js";
 export const getDoctorById = async (req, res, next) => {
   try {
 
-    const Id= req.query;
-    const doctor = await DoctorTable.findById({
-      _id: id,
-    }).populate("userId");
+    const id= req.params.id;
+  const doctor = await DoctorTable.findOne({
+    userId: id,
+  }).populate("userId");
+
     return res.status(200).json({ message: doctor });
   } catch (err) {
     console.log(err);

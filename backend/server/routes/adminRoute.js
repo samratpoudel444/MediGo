@@ -1,10 +1,10 @@
 import express from "express";
-import { getAllDoctors } from "../controllers/adminController.js/getAllDoctors";
-import { getAllPatients } from "../controllers/adminController.js/getAllPatients";
-import { getDoctorById } from "../controllers/adminController.js/getDoctorById";
-import { getPatientsById } from "../controllers/adminController.js/getPatientById";
-import { authMiddleware, isAdmin } from "../middleware/authMiddleware";
-import { deletePatient } from "../controllers/adminController.js/deletePatient";
+import { getAllDoctors } from "../controllers/adminController.js/getAllDoctors.js";
+import { getAllPatients } from "../controllers/adminController.js/getAllPatients.js";
+import { getDoctorById } from "../controllers/adminController.js/getDoctorById.js";
+import { getPatientsById } from "../controllers/adminController.js/getPatientById.js";
+import { authMiddleware, isAdmin } from "../middleware/authMiddleware.js";
+import { deletePatient } from "../controllers/adminController.js/deletePatient.js";
 
 
 const adminRouter = express.Router();
@@ -13,15 +13,16 @@ adminRouter
   .route("/showAllPatients")
   .get(authMiddleware, isAdmin, getAllPatients);
 adminRouter
-  .route("/showPatientById")
+  .route("/showPatientById/:id")
   .get(authMiddleware, isAdmin, getPatientsById);
 adminRouter
   .route("/showAllDoctors")
   .get(authMiddleware, isAdmin, getAllDoctors);
 adminRouter
-  .route("/showDoctorById")
+  .route("/showDoctorById/:id")
   .get(authMiddleware, isAdmin, getDoctorById);
-adminRouter.route('/deletePatient').get(authMiddleware, isAdmin, deletePatient )
+
+adminRouter.route('/deletePatient/:id').get(authMiddleware, isAdmin, deletePatient )
 
 
 export default adminRouter;

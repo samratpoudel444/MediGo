@@ -37,6 +37,7 @@ export const isAdmin = async (req, resp, next) => {
 export const isPatient = async (req, resp, next) => {
   try {
     const role = req.user.role;
+
     if (role !== "Patient") {
       return next({ code: 401, message: "Unauthorized To perform task" });
     }

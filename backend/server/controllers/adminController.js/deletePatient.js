@@ -1,18 +1,18 @@
-import UserTable from "../../db/models/userModels";
+import UserTable from "../../db/models/userModels.js";
 
 export const deletePatient = async(req, res, next)=>
 {
     try{
-        const userId= req.params;
+        const id= req.params.id;
 
-        const data= await UserTable.findOne({_id: userId})
+        const data= await UserTable.findOne({_id: id})
         if(!data)
         {
             return next({code:404, message:"Provided user doesnot exists"});
         }
-        await UserTable.deleteOne({ _id: userId  });
+        await UserTable.deleteOne({ _id: id  });
 
-        return res.status(204).json({message:"User deleted sucessfully"});
+        return res.status(200).json({message:"User deleted sucessfully"});
 
     }
     catch(err)

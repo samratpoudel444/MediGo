@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { number } from "yup";
 
 const appointmentSchema = new mongoose.Schema(
 	{
@@ -9,7 +10,7 @@ const appointmentSchema = new mongoose.Schema(
 		},
 		doctorId: {
 			type: mongoose.Schema.Types.ObjectId,
-			ref: "Doctor", // Reference to Doctor
+			ref: "User", // Reference to Doctor
 			required: true,
 		},
 		appointmentDate: {
@@ -21,6 +22,10 @@ const appointmentSchema = new mongoose.Schema(
 				},
 				message: "Appointment date must be in the future",
 			},
+		patientAge:{
+			type: number,
+			required:true,
+		}
 		},
 		timeSlot: {
 			type: String,

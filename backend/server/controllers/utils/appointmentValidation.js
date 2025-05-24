@@ -11,11 +11,6 @@ const validTimeSlots = [
 ];
 
 export const appointmentSchema = yup.object({
-  patientId: yup
-    .string()
-    .required("Patient ID is required.")
-    .matches(/^[0-9a-fA-F]{24}$/, "Invalid Patient ID format."),
-  
   doctorId: yup
     .string()
     .required("Doctor ID is required.")
@@ -30,6 +25,10 @@ export const appointmentSchema = yup.object({
     .string()
     .required("Time slot is required.")
     .oneOf(validTimeSlots, "Invalid time slot."),
+    
+    patientAge: yup
+    .number()
+    .required("Patient age is required"),
 
   reason: yup
     .string()
