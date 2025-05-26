@@ -5,7 +5,7 @@ export const editAppointment = async (req, res) => {
 	const appointment = await AppointmentTable.findOne({ _id: appointmentId });
 
 	if (!appointment) {
-		return res.status(200).send({ message: "Appointment not found" });
+		return ({code:404,  message: "Appointment not found" });
 	}
 
 	const newValues = req.body;
