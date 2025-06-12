@@ -6,13 +6,13 @@ export const signInUsers = async (req, res, next) => {
   const loginCredintials = req.body;
   try {
     const user = await UserTable.findOne({
-      email: loginCredintials.email,
-      role: loginCredintials.role,
+      email: loginCredintials.email
     });
-
+  
     if (!user) {
-      return next({ code: 401, message: "Provided email doesnot exists" });
+      return next({ code: 401, message: "Invalid Email Address" });
     }
+    
 
     const hashedPassword = user.password;
     const plainPassword = loginCredintials.password;
@@ -30,7 +30,7 @@ export const signInUsers = async (req, res, next) => {
     const payload = {
       id: user._id,
       email: user.email,
-      role: loginCredintials.role,
+      role: user.role,
     };
     const accessToken = jwt.sign(payload, secretKey, { expiresIn: "1d" });
     const refreshToken = jwt.sign(payload, secretKey, { expiresIn: "7d" });
@@ -44,7 +44,7 @@ export const signInUsers = async (req, res, next) => {
         sameSite: "strict",
       })
       .status(201)
-      .json({ message: "User LoggedIn Successfully", token: accessToken });
+      .json({ message: "User LoggedIn Successfully", role:user.role, token: accessToken });
   } catch (err) {
     console.log(err);
     return next({ code: 500, message: "Internal server error" });

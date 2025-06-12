@@ -1,4 +1,4 @@
-import AppointmentTable from "../../db/models/appointmentModel";
+import AppointmentTable from "../../db/models/appointmentModel.js";
 
 export const deleteAppointment = async (req, res) => {
     

@@ -5,6 +5,7 @@ import { getDoctorById } from "../controllers/adminController.js/getDoctorById.j
 import { getPatientsById } from "../controllers/adminController.js/getPatientById.js";
 import { authMiddleware, isAdmin } from "../middleware/authMiddleware.js";
 import { deletePatient } from "../controllers/adminController.js/deletePatient.js";
+import { signUpUser } from "../controllers/userAuthController/signUpUser.js";
 
 
 const adminRouter = express.Router();
@@ -22,7 +23,8 @@ adminRouter
   .route("/showDoctorById/:id")
   .get(authMiddleware, isAdmin, getDoctorById);
 
-adminRouter.route('/deletePatient/:id').get(authMiddleware, isAdmin, deletePatient )
+adminRouter.route('/deletePatient/:id').get(authMiddleware, isAdmin, deletePatient );
+adminRouter.route('/createDoctor').post(authMiddleware, isAdmin, signUpUser )
 
 
 export default adminRouter;

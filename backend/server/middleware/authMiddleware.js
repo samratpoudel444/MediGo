@@ -10,6 +10,7 @@ export const authMiddleware = async (req, resp, next) => {
     if (!decoded) {
       return next({ code: 400, message: "No token data found" });
     }
+
     req.user = decoded;
     next();
   } catch (err) {
@@ -25,7 +26,7 @@ export const isAdmin = async (req, resp, next) => {
   try {
     const role = req.user.role;
     if (role !== "Admin") {
-      return next({ code: 401, message: "Unauthorized To perform task" });
+      return next({ code: 401, message: "Unauthorized to perform task" });
     }
     next();
   } catch (err) {

@@ -4,12 +4,12 @@ import UserTable from "../../db/models/userModels.js";
 export const getAllPatients= async(req, res, next)=>
 {
     try{
+      
         const patients = await UserTable.find({ role: `Patient` });
         if(!patients)
         {
             return next({code:404 , message:"Patients not found"});
         }
-
         return res.status(200).json({message: patients})
     }
     catch(err)
