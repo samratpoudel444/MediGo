@@ -1,16 +1,15 @@
 import mongoose from "mongoose";
-import { number } from "yup";
 
 const appointmentSchema = new mongoose.Schema(
 	{
 		patientId: {
 			type: mongoose.Schema.Types.ObjectId,
-			ref: "User", // Reference to User with role "Patient"
+			ref: "User",
 			required: true,
 		},
 		doctorId: {
 			type: mongoose.Schema.Types.ObjectId,
-			ref: "User", // Reference to Doctor
+			ref: "User",
 			required: true,
 		},
 		appointmentDate: {
@@ -22,10 +21,10 @@ const appointmentSchema = new mongoose.Schema(
 				},
 				message: "Appointment date must be in the future",
 			},
-		patientAge:{
-			type: number,
-			required:true,
-		}
+		},
+		patientAge: {
+			type: Number,
+			required: true,
 		},
 		timeSlot: {
 			type: String,
@@ -45,16 +44,17 @@ const appointmentSchema = new mongoose.Schema(
 			trim: true,
 			maxlength: 500,
 		},
-		status: {
-			type: String,
-			enum: ["Pending", "Confirmed", "Completed", "Cancelled"],
-			default: "Pending",
+		appointmentType: {
+			type: Number,
+			required: true,
+			enum: [1, 2, 3],
 		},
 	},
 	{
-		timestamps: true, // adds createdAt and updatedAt automatically
+		timestamps: true,
 	}
 );
+
 appointmentSchema.index(
 	{ patientId: 1, doctorId: 1, appointmentDate: 1, timeSlot: 1 },
 	{ unique: true }
