@@ -35,12 +35,6 @@ const LoginUsers = () => {
          navigate(location.pathname, { replace: true });
         },500)
         }
-         if (location.state?.toastError) {
-           toast.error(location.state.toastError);
-           setTimeout(() => {
-             navigate(location.pathname, { replace: true });
-           }, 500);
-         }
       }, []);
 
     const navigate= useNavigate();
@@ -127,7 +121,7 @@ const LoginUsers = () => {
                     </Button>
 
                     <p>
-                      Didn't have account?
+                      Didn't have account?&nbsp;&nbsp;
                       <Link href="/register">Register here.</Link>
                     </p>
                   </Stack>

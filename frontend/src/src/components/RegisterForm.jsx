@@ -36,7 +36,7 @@ const RegisterForm = () => {
     lastName: "",
     dob: "",
     gender: "",
-    role: "User",
+    role: "Patient",
     address: "",
     longitude: "",
     latitude: "",
@@ -263,12 +263,12 @@ const RegisterForm = () => {
             </label>
             <div className="w-full h-96 border rounded-lg overflow-hidden">
               <MapWithMarker onSelect={handleLocationChange} />
-              {FormControl.latitude && FormControl.longitude && (
+              {/* {FormControl.latitude && FormControl.longitude && (
                 <p className="mt-2 text-sm text-gray-600">
                   Selected:<br></br> Latitude {FormControl.latitude}, Lognitude{" "}
                   {FormControl.longitude}
                 </p>
-              )}
+              )} */}
             </div>
           </FormControl>
 
