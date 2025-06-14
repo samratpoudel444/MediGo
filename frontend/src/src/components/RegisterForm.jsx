@@ -36,7 +36,7 @@ const RegisterForm = () => {
     lastName: "",
     dob: "",
     gender: "",
-    role: "User",
+    role: "patient",
     address: "",
     longitude: "",
     latitude: "",

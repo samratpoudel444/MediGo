@@ -1,4 +1,4 @@
-import img from "/Users/samrat/Desktop/MediGo/frontend/src/src/assets/MEDIGO.png"
+import img from "../assets/MEDIGO.png"
 const Banner = () => {
   return (
     <div className="fixed top-0 bottom-0 left-0 w-full lg:w-1/2 z-50">
