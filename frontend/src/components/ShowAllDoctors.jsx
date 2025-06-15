@@ -113,7 +113,6 @@ function ShowAllDoctors() {
                     )}
 
 
-                  </div>
                 </TableCell>
               </TableRow>
             ))}

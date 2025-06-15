@@ -10,7 +10,7 @@ function AdminLayout() {
       <div className="fixed">
         <SideBar />
       </div>
-      <div className="lg:ml-80 w-screen">
+      <div className="lg:ml-80 w-[98vw]">
         <Outlet />
       </div>
     </div>
