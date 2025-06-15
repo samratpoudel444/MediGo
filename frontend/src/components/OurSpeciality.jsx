@@ -7,9 +7,9 @@ import { Button } from "@mui/material";
 
 const OurSpeciality = () => {
   return (
-    <div className="w-screen h-[500px] bg-gray-50 flex flex-col items-center justify-around">
+    <div className="w-[97vw] h-[500px] bg-gray-50 flex flex-col items-center justify-around">
       <div>
-        <h3 className="w-screen h-[30px] p-2 ml-1  text-xl text-[#42cbf5] bg-gray-50  flex items-center justify-center">
+        <h3 className="w-[94vw] h-[30px] p-2 ml-1  text-xl text-[#42cbf5] bg-gray-50  flex items-center justify-center">
           Features
         </h3>
         <h1 className="text-5xl mt-4 w-screen flex justify-center">

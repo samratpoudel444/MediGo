@@ -5,7 +5,7 @@ import { Button } from "@mui/material";
 
 const OurMedicalServices = () => {
   return (
-    <div className="flex flex-col w-screen">
+    <div className="flex flex-col w-[97vw]">
       <div className="flex flex-col items-center justify-center m-18">
         <h3 className="w-fit h-[30px] p-2 ml-1 text-gray text-xl text-[#42cbf5] bg-gray-50 rounded-2xl flex items-center justify-center">
           Service

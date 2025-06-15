@@ -54,7 +54,7 @@ function ShowAllDoctors()
         page * rowsPerPage+ rowsPerPage 
     );
     return (
-      <Paper sx={{ width: "100%", overflow: "hidden" }} className="sm:w-screen">
+      <Paper sx={{ width: "100%", overflow: "hidden" }} className="sm:w-[98vw]">
         <Typography
           sx={{
             fontSize: "2.5rem",

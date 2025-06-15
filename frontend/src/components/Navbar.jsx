@@ -25,7 +25,7 @@ const Navbar = () => {
           />
           <div className="ml-8 text-3xl text-[#42cbf5]">MediGO</div>
         </div>
-        <div className=" w-[40%] flex items-center justify-start ">
+        <div className=" w-[40%] flex items-center justify-start z-10 ">
           {navItems.map((item) => (
             <Link
               key={item.text}
@@ -38,16 +38,20 @@ const Navbar = () => {
         </div>
       </div>
       {/* Background circle */}
-      <div className="absolute -top-[200px] right-0 translate-x-[100px] z-0 h-[700px] w-[700px] bg-[#42cbf5] rounded-full overflow-hidden">
-        {/* Image on top of background */}
-        <div className="absolute -top-[-200px] right-50 translate-x-[100px] z-10 h-[600px] w-[600px] flex items-center justify-center pointer-events-none">
+      {/* translae
+      rounded-tl-[600px] rounded-bl-[600px] rounded-br-[300px] rounded-tr-none overflow-x-hidden */}
+      <div className=" absolute top-[0px] right-0  ">
+        <img className="w-[700px]" src="./navimage.png" alt="" />
+        
+      </div>
+      {/* <div className="absolute -top-[-180px] right-70 translate-x-[100px] z-10 h-[600px] w-[400px] flex items-center justify-center pointer-events-none">
           <img
             src={doctorImage}
             alt="Doctor image"
             className="w-[90%] h-[90%] object-contain"
           />
-        </div>
-      </div>
+        </div> */}
+      
 
       {/* Foreground box */}
       <Button

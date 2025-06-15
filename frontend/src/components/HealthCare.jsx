@@ -3,7 +3,7 @@ import React from "react";
 
 const HealthCare = () => {
   return (
-    <div className=" w-screen flex flex-col justify-items-start">
+    <div className=" w-[97vw] flex flex-col justify-items-start">
       <div className="m-16 mt-12 w-[40%]">
         <h3 className="w-fit h-[30px] p-2 ml-1 text-gray text-xl text-[#42cbf5] bg-gray-50 rounded-2xl flex items-center justify-center">
           MEDICAL

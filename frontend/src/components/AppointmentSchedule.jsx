@@ -4,7 +4,7 @@ import scope from "../assets/download.jpg";
 
 const AppointmentSchedule = () => {
   return (
-    <div className="w-screen h-[600px] flex items-center justify-center pr-48">
+    <div className="w-[98vw] h-[600px] flex items-center justify-center pr-48">
       <div className=" w-[60%] flex flex-col justify-items-start items-end mr-12">
         <div className="m-16 mt-12 w-[40%]">
           <h3 className="w-fit h-[30px] p-2 ml-1 text-gray text-xl text-[#42cbf5] bg-gray-50 rounded-2xl flex items-center justify-center">
