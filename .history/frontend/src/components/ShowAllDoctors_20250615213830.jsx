@@ -38,6 +38,7 @@ function ShowAllDoctors() {
   });
 
   const handlePageChange = (event, newPage) => setPage(newPage);
+
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
@@ -60,7 +61,6 @@ function ShowAllDoctors() {
       >
         Show Doctors
       </Typography>
-
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
@@ -75,7 +75,6 @@ function ShowAllDoctors() {
               <TableCell>Action</TableCell>
             </TableRow>
           </TableHead>
-
           <TableBody>
             {visibleRows.map((item, index) => (
               <TableRow key={item._id}>
@@ -89,29 +88,38 @@ function ShowAllDoctors() {
                 <TableCell>{item?.degreeType}</TableCell>
                 <TableCell>{item?.specialistType}</TableCell>
                 <TableCell>
-                  <div className="flex gap-2">
-                    <button
-                      onClick={() =>
-                        setDoctorDetails({
-                          id: item.userId._id,
-                          fullname:
-                            item.userId.firstName + " " + item.userId.lastName,
-                        })
-                      }
-                      className="text-sm px-3 py-1 bg-green-500 hover:bg-green-600 rounded text-white"
-                    >
+                  <div
+                    onClick={() => {
+                      setDoctorDetails({
+                        id: item.userId._id,
+                        fullname:
+                          item.userId.firstName + " " + item.userId.lastName,
+                      });
+                    }}
+                    className="flex gap-2"
+                  >
+                    <button className="text-sm px-3 py-1 bg-green-500 hover:bg-green-600 rounded">
                       View
                     </button>
+                    {doctorDetails && (
+                      <DetailsModal
+                        id={doctorDetails.id}
+                        fullname={doctorDetails.fullname}
+                        onClose={() => setDoctorDetails(null)}
+                      />
+                    )}
 
                     <button
                       onClick={() =>
                         setSelectedDoctor({
                           id: item.userId._id,
                           fullname:
-                            item.userId.firstName + " " + item.userId.lastName,
+                            item?.userId?.firstName +
+                            " " +
+                            item?.userId?.lastName,
                         })
                       }
-                      className="text-sm px-3 py-1 bg-red-500 hover:bg-red-600 rounded text-white"
+                      className="text-sm px-3 py-1 bg-red-500 hover:bg-red-600 rounded"
                     >
                       Delete
                     </button>
@@ -121,7 +129,6 @@ function ShowAllDoctors() {
             ))}
           </TableBody>
         </Table>
-
         <TablePagination
           component="div"
           count={rows.length}
@@ -132,15 +139,6 @@ function ShowAllDoctors() {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </TableContainer>
-
-      {/* Modals should be outside the Table loop */}
-      {doctorDetails && (
-        <DetailsModal
-          id={doctorDetails.id}
-          fullname={doctorDetails.fullname}
-          onClose={() => setDoctorDetails(null)}
-        />
-      )}
 
       {selectedDoctor && (
         <PopUp
