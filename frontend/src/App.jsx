@@ -10,9 +10,9 @@ import ShowAllUsers from "./components/ShowAllUsers";
 import ProtectedRoute from "./components/ProtectedRoute";
 import HomeComponent from "./components/HomeComponent";
 import Analytics from "./components/Analytics";
-
-
-
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -31,13 +31,13 @@ function App() {
             <Route path="ViewAnalytics" element={<Analytics />} />
           </Route>
         </Route>
-        {/* <Route element={<ProtectedRoute allowedRole={["Patient"]} />}> */}
-        <Route path="/Home" element={<HomeComponent />}></Route>
-        {/* </Route> */}
+        <Route path="/Home" element={<HomeComponent />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/Footer" element={<Footer />} />
       </Routes>
     </Router>
   );
-
 }
 
 export default App;
