@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { type } from "os";
 
 const appointmentSchema = new mongoose.Schema(
   {
@@ -12,6 +13,10 @@ const appointmentSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+	Age:{
+		type: Number,
+		require: true
+	},
     appointmentDate: {
       type: Date,
       required: true,

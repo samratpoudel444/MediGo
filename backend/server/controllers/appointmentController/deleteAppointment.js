@@ -13,6 +13,5 @@ export const deleteAppointment = async (req, res) => {
 
 	await AppointmentTable.deleteOne({ _id: appointmentId });
 
-	console.log("drel")
 	return res.status(200).send({ message: "Appointment deleted Successfully" });
 };

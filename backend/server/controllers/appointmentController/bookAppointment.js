@@ -2,7 +2,7 @@ import AppointmentTable from "../../db/models/appointmentModel.js";
 
 export const bookAppointment = async (req, res, next) => {
   try {
-    console.log(req.user);
+    // console.log(req.user);
     const newAppointment = req.body;
     req.body.patientId = req.user.id;
 

@@ -11,7 +11,6 @@ import appointmentRoute from "./server/routes/appointmentRoute.js";
 import patientRouter from "./server/routes/patientRoute.js";
 import cors from 'cors';
 
-
 dotenv.config();
 
 const PORT = process.env.PORT || 4000;
@@ -20,15 +19,15 @@ const allowedOrigins = ["http://localhost:5174", "http://localhost:5173"];
 
 app.use(
   cors({
-    // origin: "*",
-    origin: function (origin, callback) {
+     origin: "*",
+    // origin: function (origin, callback) {
 
-      if (allowedOrigins.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    //   if (allowedOrigins.indexOf(origin) !== -1) {
+    //     callback(null, true);
+    //   } else {
+    //     callback(new Error("Not allowed by CORS"));
+    //   }
+    // },
     credentials: true,
   })
 );

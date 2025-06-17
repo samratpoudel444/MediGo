@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import mongoose from "mongoose";
 
 const appointmentSchema = new mongoose.Schema(
   {
@@ -23,7 +22,7 @@ const appointmentSchema = new mongoose.Schema(
         message: "Appointment date must be in the future",
       },
     },
-    patientAge: {
+    age: {
       type: Number,
       required: true,
     },
@@ -58,10 +57,13 @@ const appointmentSchema = new mongoose.Schema(
 );
 
 appointmentSchema.index(
-    { patientId: 1, doctorId: 1, appointmentDate: 1, timeSlot: 1 },
-    { unique: true }
+  { patientId: 1, doctorId: 1, appointmentDate: 1, timeSlot: 1 },
+  { unique: true }
 );
 
-const AppointmentTable = mongoose.model("Appointment", appointmentSchema);
+const bookAppointmentTable = mongoose.model(
+  "bookAppointment",
+  appointmentSchema
+);
 
-export default AppointmentTable;
+export default bookAppointmentTable;
