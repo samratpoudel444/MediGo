@@ -5,12 +5,13 @@ import scope from "../assets/scope.png";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
+
 const navItems = [
   { text: "About", link: "#" },
   { text: "Services", link: "#" },
   { text: "Doctor", link: "#" },
   { text: "Blog", link: "#" },
-  { text: "Contact", link: "#" },
+  { text: "Contact", link: "/contact" },
 ];
 
 const Navbar = () => {
@@ -234,6 +235,7 @@ const Navbar = () => {
         scale: navbarScale
       }}
     >
+      
       {/* Floating particles background */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(8)].map((_, i) => (

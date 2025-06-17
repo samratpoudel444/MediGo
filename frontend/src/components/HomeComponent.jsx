@@ -1,6 +1,7 @@
 import AppointmentSchedule from "./AppointmentSchedule";
 import CardSection from "./CardSection";
 import CardSectionCard from "./CardSectionCard";
+import Footer from "./Footer";
 import HealthCare from "./HealthCare";
 import Navbar from "./Navbar";
 import OurDoctors from "./OurDoctors";
@@ -18,6 +19,7 @@ const HomeComponent = () => {
       <OurSpeciality />
       <AppointmentSchedule />
       <OurDoctors />
+      <Footer />
     </div>
   );
 };
