@@ -1,4 +1,5 @@
-import doctor from "../../assets/MediGO.png";
+
+import doctor from "../../assets/MEDIGO.png";
 // import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import axiosInstance from "../utils/AxiosInstance";
@@ -70,7 +71,7 @@ function DetailsModal({ id, fullname, onClose }) {
 
                 <div className="flex flex-row w-full">
                   <div className="border px-3 py-2 w-1/2">Email:</div>
-                  <div className="border px-3 py-2 w-1/2">
+                  <div className="border px-3 py-2 w-1/2 break-words">
                     {data?.userId.email}
                   </div>
                 </div>

@@ -1,0 +1,53 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint-staged": "lint-staged",
+    "lint-fix": "eslint .--fix",
+    "prepare": "husky install",
+    "seedAdmin": "node server/db/seeding/adminSeeding.js",
+    "start":"node index.js",
+    "dev":""
+  },
+  "author": "Samrat, Utsav, Jenish",
+  "license": "ISC",
+  "description": "The medical prescription system(MediGo) is an integrated healthcare platform de- signed to streamline the process of prescription handling and medicine accessibility for patients. The system allows users to book appointments with doctors, upload prescription images, and automatically extract medicine details using Optical Character Recogni- tion (OCR) technology. Once the prescription is processed, The medical prescription system(MediGo) provides users with comprehensive information about the prescribed medicines, including usage, and side effects. The system further enhances convenience by suggesting nearby pharmacies that are likely to stock the medicines and providing the shortest navigation route using Maps API. By digitizing prescriptions and facilitating access to medicine information and location services, The medical prescription sys- tem(MediGo) reduces patient confusion, minimizes manual errors, and promotes timely medication adherence. The platform is accessible from any internet-enabled device and offers a secure, efficient, and user-friendly experience, ultimately contributing to improved healthcare delivery and patient outcomes. ",
+  "dependencies": {
+    "@tanstack/react-query": "^5.80.6",
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.6.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.5.0",
+    "json-web-token": "^3.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.16.0",
+    "mongoose": "^8.14.2",
+    "multer": "^2.0.1",
+    "uuid": "^11.1.0",
+    "yup": "^1.6.1"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "^9.26.0",
+    "eslint": "^9.26.0",
+    "eslint-define-config": "^2.1.0",
+    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.1.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^16.0.0",
+    "nodemon": "^3.1.10"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.css": "stylelint --fix"
+  }
+}
