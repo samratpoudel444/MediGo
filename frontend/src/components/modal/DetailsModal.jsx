@@ -1,4 +1,4 @@
-import doctor from "/Users/samrat/Desktop/MediGo/frontend/src/assets/MediGO.png";
+import doctor from "../../assets/MediGO.png";
 // import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import axiosInstance from "../utils/AxiosInstance";

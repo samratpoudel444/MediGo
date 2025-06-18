@@ -9,6 +9,7 @@ import CreateDoctor from "./components/CreateDoctor";
 import ShowAllUsers from "./components/ShowAllUsers";
 import ProtectedRoute from "./components/ProtectedRoute";
 import HomeComponent from "./components/HomeComponent";
+import ChatApp from "./components/ChatApp/ChatApp";
 
 
 function App() {
@@ -30,7 +31,9 @@ function App() {
         {/* <Route element={<ProtectedRoute allowedRole={["Patient"]} />}> */}
         <Route path="/Home" element={<HomeComponent />}></Route>
         {/* </Route> */}
+        <Route path="/" element={<ChatApp/>}></Route>
       </Routes>
+
     </Router>
   );
 
