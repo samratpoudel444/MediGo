@@ -9,6 +9,7 @@ import CreateDoctor from "./components/CreateDoctor";
 import ShowAllUsers from "./components/ShowAllUsers";
 import ProtectedRoute from "./components/ProtectedRoute";
 import HomeComponent from "./components/HomeComponent";
+import ChatApp from "./components/ChatApp/ChatApp";
 import Analytics from "./components/Analytics";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -31,11 +32,13 @@ function App() {
             <Route path="ViewAnalytics" element={<Analytics />} />
           </Route>
         </Route>
+
         <Route path="/Home" element={<HomeComponent />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/Footer" element={<Footer />} />
       </Routes>
+
     </Router>
   );
 }
