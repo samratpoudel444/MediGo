@@ -31,10 +31,18 @@ function App() {
             <Route path="ViewAnalytics" element={<Analytics />} />
           </Route>
         </Route>
+<<<<<<< HEAD
         {/* <Route element={<ProtectedRoute allowedRole={["Patient"]} />}> */}
         <Route path="/Home" element={<HomeComponent />}></Route>
         <Route path="/test" element={<AppointmentForm />}></Route>
         {/* </Route> */}
+=======
+
+        <Route path="/Home" element={<HomeComponent />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/Footer" element={<Footer />} />
+>>>>>>> 6f9840426cc21662df7f14ee5e327f46f6287c14
       </Routes>
 
     </Router>
