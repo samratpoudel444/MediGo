@@ -12,8 +12,8 @@
     "lint-fix": "eslint .--fix",
     "prepare": "husky install",
     "seedAdmin": "node server/db/seeding/adminSeeding.js",
-    "start":"node index.js",
-    "dev":"nodemon index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "Samrat, Utsav, Jenish",
   "license": "ISC",
@@ -31,6 +31,7 @@
     "mongodb": "^6.16.0",
     "mongoose": "^8.14.2",
     "multer": "^2.0.1",
+    "node-cron": "^4.1.0",
     "uuid": "^11.1.0",
     "yup": "^1.6.1"
   },
