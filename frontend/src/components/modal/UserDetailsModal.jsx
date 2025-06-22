@@ -32,17 +32,17 @@ function UserDetailsModal({ id, fullname, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="absolute top-3 right-2.5 text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            className="absolute top-3 right-2.5 text-black hover:text-gray-900 dark:hover:text-white"
           >
             ✕
           </button>
 
           <div className="p-5 text-center">
-            <h3 className="mb-5 font-normal text-gray-500 dark:text-gray-300 text-2xl text-bold">
+            <h3 className="mb-5 font-normal text-black dark:text-gray-300 text-2xl text-bold">
               User Details
             </h3>
 
-            <div className="flex flex-col my-3 text-gray-300">
+            <div className="flex flex-col my-3 text-black">
               <div className="flex items-center justify-center my-2">
                 <img
                   src={doctor}

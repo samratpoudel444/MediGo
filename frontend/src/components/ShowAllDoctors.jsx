@@ -16,14 +16,13 @@ import axiosInstance from "./utils/AxiosInstance";
 import PopUp from "./modal/PopUpModal";
 import DetailsModal from "./modal/DetailsModal";
 
-// Updated to ensure a defined return value
 const fetchDoctor = async () => {
   try {
     const response = await axiosInstance.get("/api/v1/showAllDoctors");
 
     const doctors =
-      response?.data?.doctors || // If backend uses 'doctors'
-      response?.data?.message || // If still using 'message'
+      response?.data?.doctors ||
+      response?.data?.message || 
       [];
 
     if (!Array.isArray(doctors)) {
@@ -61,7 +60,7 @@ function ShowAllDoctors() {
   };
 
   const visibleRows = rows
-    .filter((item) => item?.userId) // Ensure userId exists
+    .filter((item) => item?.userId)
     .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
 
   return (
