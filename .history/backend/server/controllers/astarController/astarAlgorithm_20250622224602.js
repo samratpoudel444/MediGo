@@ -2,11 +2,8 @@
 // utils.js
 // import roadGraph from './roadGraph.json' assert { type: 'json' };
 import { readFileSync } from 'fs';
-import path from 'path';
 
-const roadGraphPath = path.resolve('C:/Users/luint/OneDrive/Desktop/MediGo/backend/server/jsonData/roadGraph.json');
-const roadGraph = JSON.parse(readFileSync(roadGraphPath, 'utf-8'));
-
+const roadGraph = JSON.parse(readFileSync('/../roadGraph.json', 'utf-8'));
 function haversine(a, b) {
 	const R = 6371e3;
 	const toRad = (d) => (d * Math.PI) / 180;

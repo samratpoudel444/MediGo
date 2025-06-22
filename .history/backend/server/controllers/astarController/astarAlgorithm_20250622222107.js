@@ -1,13 +1,6 @@
 // Haversine distance
 // utils.js
-// import roadGraph from './roadGraph.json' assert { type: 'json' };
-import { readFileSync } from 'fs';
-import path from 'path';
-
-const roadGraphPath = path.resolve('C:/Users/luint/OneDrive/Desktop/MediGo/backend/server/jsonData/roadGraph.json');
-const roadGraph = JSON.parse(readFileSync(roadGraphPath, 'utf-8'));
-
-function haversine(a, b) {
+export function haversine(a, b) {
 	const R = 6371e3;
 	const toRad = (d) => (d * Math.PI) / 180;
 	const dLat = toRad(b.lat - a.lat);
@@ -71,7 +64,7 @@ function haversine(a, b) {
 // }
 
 // Convert GPS to nearest grid cell
-function findNearestNode(lat, lng, graph) {
+ function findNearestNode(lat, lng, graph) {
 	let min = Infinity,
 		nearest = null;
 	for (const id in graph.nodes) {
@@ -85,7 +78,7 @@ function findNearestNode(lat, lng, graph) {
 	return nearest;
 }
 
-function aStar(graph, startId, endId) {
+ function aStar(graph, startId, endId) {
 	const openSet = new Set([startId]);
 	const cameFrom = {};
 	const gScore = {},

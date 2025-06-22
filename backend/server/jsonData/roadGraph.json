@@ -1,0 +1,42 @@
+{
+	"nodes": {
+		"A": {
+			"lat": 27.7172,
+			"lng": 85.324,
+			"neighbors": [
+				{ "id": "B", "cost": 50 },
+				{ "id": "C", "cost": 60 }
+			]
+		},
+		"B": {
+			"lat": 27.7175,
+			"lng": 85.325,
+			"neighbors": [
+				{ "id": "A", "cost": 50 },
+				{ "id": "D", "cost": 40 }
+			]
+		},
+		"C": {
+			"lat": 27.7168,
+			"lng": 85.3235,
+			"neighbors": [
+				{ "id": "A", "cost": 60 },
+				{ "id": "D", "cost": 50 }
+			]
+		},
+		"D": {
+			"lat": 27.718,
+			"lng": 85.3245,
+			"neighbors": [
+				{ "id": "B", "cost": 40 },
+				{ "id": "C", "cost": 50 },
+				{ "id": "E", "cost": 30 }
+			]
+		},
+		"E": {
+			"lat": 27.719,
+			"lng": 85.325,
+			"neighbors": [{ "id": "D", "cost": 30 }]
+		}
+	}
+}

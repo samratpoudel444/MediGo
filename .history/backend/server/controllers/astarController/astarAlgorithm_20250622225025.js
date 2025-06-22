@@ -4,7 +4,7 @@
 import { readFileSync } from 'fs';
 import path from 'path';
 
-const roadGraphPath = path.resolve('C:/Users/luint/OneDrive/Desktop/MediGo/backend/server/jsonData/roadGraph.json');
+const roadGraphPath = path.resolve('C:/Users/luint/OneDrive/Desktop/MediGo/backend/server/jsonDataroadGraph.json');
 const roadGraph = JSON.parse(readFileSync(roadGraphPath, 'utf-8'));
 
 function haversine(a, b) {

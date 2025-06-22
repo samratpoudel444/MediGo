@@ -3,6 +3,6 @@ import express from "express";
 
 const astarRouter = express.Router();
 
-astarRouter.route("/astar").post(astarAlgorithm);
+astarRouter.route("/astar").p(astarAlgorithm);
 
 export default astarRouter;
