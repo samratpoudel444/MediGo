@@ -1,13 +1,6 @@
 // Haversine distance
 // utils.js
-// import roadGraph from './roadGraph.json' assert { type: 'json' };
-import { readFileSync } from 'fs';
-import path from 'path';
-
-const roadGraphPath = path.resolve('C:/Users/luint/OneDrive/Desktop/MediGo/backend/server/jsonData/roadGraph.json');
-const roadGraph = JSON.parse(readFileSync(roadGraphPath, 'utf-8'));
-
-function haversine(a, b) {
+export function haversine(a, b) {
 	const R = 6371e3;
 	const toRad = (d) => (d * Math.PI) / 180;
 	const dLat = toRad(b.lat - a.lat);
@@ -19,59 +12,59 @@ function haversine(a, b) {
 }
 
 // Basic grid A* algorithm
-// function astar(grid, start, end) {
-// 	const open = [start];
-// 	start.visited = true;
+function astar(grid, start, end) {
+	const open = [start];
+	start.visited = true;
 
-// 	while (open.length > 0) {
-// 		open.sort((a, b) => a.f - b.f);
-// 		const current = open.shift();
+	while (open.length > 0) {
+		open.sort((a, b) => a.f - b.f);
+		const current = open.shift();
 
-// 		if (current === end) {
-// 			const path = [];
-// 			let curr = current;
-// 			while (curr.parent) {
-// 				path.push(curr);
-// 				curr = curr.parent;
-// 			}
-// 			path.push(start);
-// 			return path.reverse();
-// 		}
+		if (current === end) {
+			const path = [];
+			let curr = current;
+			while (curr.parent) {
+				path.push(curr);
+				curr = curr.parent;
+			}
+			path.push(start);
+			return path.reverse();
+		}
 
-// 		current.closed = true;
+		current.closed = true;
 
-// 		const dirs = [
-// 			[0, 1],
-// 			[1, 0],
-// 			[-1, 0],
-// 			[0, -1],
-// 		];
-// 		for (let [dx, dy] of dirs) {
-// 			const nx = current.x + dx;
-// 			const ny = current.y + dy;
-// 			if (!grid[ny] || !grid[ny][nx]) continue;
+		const dirs = [
+			[0, 1],
+			[1, 0],
+			[-1, 0],
+			[0, -1],
+		];
+		for (let [dx, dy] of dirs) {
+			const nx = current.x + dx;
+			const ny = current.y + dy;
+			if (!grid[ny] || !grid[ny][nx]) continue;
 
-// 			const neighbor = grid[ny][nx];
-// 			if (neighbor.closed) continue;
+			const neighbor = grid[ny][nx];
+			if (neighbor.closed) continue;
 
-// 			const tentativeG = current.g + 1;
+			const tentativeG = current.g + 1;
 
-// 			if (!neighbor.visited || tentativeG < neighbor.g) {
-// 				neighbor.visited = true;
-// 				neighbor.parent = current;
-// 				neighbor.g = tentativeG;
-// 				neighbor.h = haversine(neighbor, end);
-// 				neighbor.f = neighbor.g + neighbor.h;
-// 				if (!open.includes(neighbor)) open.push(neighbor);
-// 			}
-// 		}
-// 	}
+			if (!neighbor.visited || tentativeG < neighbor.g) {
+				neighbor.visited = true;
+				neighbor.parent = current;
+				neighbor.g = tentativeG;
+				neighbor.h = haversine(neighbor, end);
+				neighbor.f = neighbor.g + neighbor.h;
+				if (!open.includes(neighbor)) open.push(neighbor);
+			}
+		}
+	}
 
-// 	return [];
-// }
+	return [];
+}
 
 // Convert GPS to nearest grid cell
-function findNearestNode(lat, lng, graph) {
+export function findNearestNode(lat, lng, graph) {
 	let min = Infinity,
 		nearest = null;
 	for (const id in graph.nodes) {
@@ -85,7 +78,7 @@ function findNearestNode(lat, lng, graph) {
 	return nearest;
 }
 
-function aStar(graph, startId, endId) {
+export function aStar(graph, startId, endId) {
 	const openSet = new Set([startId]);
 	const cameFrom = {};
 	const gScore = {},
@@ -132,33 +125,33 @@ function aStar(graph, startId, endId) {
 }
 
 // Create grid
-// function makeGrid(bounds, cols, rows) {
-// 	const [south, north, west, east] = bounds;
-// 	const grid = [];
-// 	const latStep = (north - south) / rows;
-// 	const lngStep = (east - west) / cols;
+function makeGrid(bounds, cols, rows) {
+	const [south, north, west, east] = bounds;
+	const grid = [];
+	const latStep = (north - south) / rows;
+	const lngStep = (east - west) / cols;
 
-// 	for (let y = 0; y < rows; y++) {
-// 		const row = [];
-// 		for (let x = 0; x < cols; x++) {
-// 			row.push({
-// 				x,
-// 				y,
-// 				lat: south + y * latStep,
-// 				lng: west + x * lngStep,
-// 				f: 0,
-// 				g: 0,
-// 				h: 0,
-// 				visited: false,
-// 				closed: false,
-// 				parent: null,
-// 				cost: 1,
-// 			});
-// 		}
-// 		grid.push(row);
-// 	}
-// 	return grid;
-// }
+	for (let y = 0; y < rows; y++) {
+		const row = [];
+		for (let x = 0; x < cols; x++) {
+			row.push({
+				x,
+				y,
+				lat: south + y * latStep,
+				lng: west + x * lngStep,
+				f: 0,
+				g: 0,
+				h: 0,
+				visited: false,
+				closed: false,
+				parent: null,
+				cost: 1,
+			});
+		}
+		grid.push(row);
+	}
+	return grid;
+}
 
 export const astarAlgorithm = (req, res) => {
 	try {

@@ -66,16 +66,7 @@ export default function MapWithPath() {
 			{pharmacy && <Marker position={[pharmacy.lat, pharmacy.lng]} />}
 			{path.length > 0 && (
 				<>
-					<Polyline
-						positions={path.map((p) => [p.lat, p.lng])}
-						pathOptions={{
-							color: "red",
-							weight: 6,
-							opacity: 0.9,
-							dashArray: "8, 6", // Optional: dashed line
-						}}
-					/>
-
+					<Polyline positions={path.map((p) => [p.lat, p.lng])} color="blue" />
 					<FitBounds path={path} />
 				</>
 			)}

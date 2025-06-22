@@ -67,14 +67,14 @@ export default function MapWithPath() {
 			{path.length > 0 && (
 				<>
 					<Polyline
-						positions={path.map((p) => [p.lat, p.lng])}
-						pathOptions={{
-							color: "red",
-							weight: 6,
-							opacity: 0.9,
-							dashArray: "8, 6", // Optional: dashed line
-						}}
-					/>
+  positions={path.map((p) => [p.lat, p.lng])}
+  pathOptions={{
+    color: "red",
+    weight: 6,
+    opacity: 0.9,
+    dashArray: "8, 6", // Optional: dashed line
+  }}
+/>
 
 					<FitBounds path={path} />
 				</>
