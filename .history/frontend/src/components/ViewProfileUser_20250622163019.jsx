@@ -1,0 +1,9 @@
+
+
+const viewProfile= ()=>
+{
+    return(
+        <>
+        </>
+    )
+}
