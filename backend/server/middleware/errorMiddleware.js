@@ -13,7 +13,7 @@ export const errorHandler = (err, req, res, next) => {
   }
 
 
-  let statusCode = 500;
+  let statusCode = err.code || 500;
 
 
   if (err.code === "ENOENT") {

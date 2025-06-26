@@ -1,4 +1,4 @@
-import { uploadPrescription } from "../controllers/patientController/uploadPrescription.js";
+import { uploadPrescription } from "../controllers/scanPrescriptionController/uploadPrescription.js";
 import express from 'express';
 import upload from "../helper/multerHelper.js";
 import { authMiddleware, isPatient } from "../middleware/authMiddleware.js";

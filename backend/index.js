@@ -10,7 +10,7 @@ import adminRouter from "./server/routes/adminRoute.js";
 import appointmentRoute from "./server/routes/appointmentRoute.js";
 import patientRouter from "./server/routes/patientRoute.js";
 import cors from "cors";
-import astarRouter from "./server/routes/astarRoute/astarRoute.js";
+//import astarRouter from "./server/routes/astarRoute/astarRoute.js";
 
 dotenv.config();
 
@@ -20,15 +20,15 @@ const allowedOrigins = ["http://localhost:5174", "http://localhost:5173"];
 
 app.use(
 	cors({
-		origin: "*",
-		//   origin: function (origin, callback) {
+		//origin: "*",
+		  origin: function (origin, callback) {
 
-  //     if (allowedOrigins.indexOf(origin) !== -1) {
-  //       callback(null, true);
-  //     } else {
-  //       callback(new Error("Not allowed by CORS"));
-  //     }
-  //  },
+      if (allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+   },
     credentials: true,
   })
 );
@@ -44,7 +44,7 @@ app.use("/api/v1", userRouter);
 app.use("/api/v1", adminRouter);
 app.use("/api/v1", appointmentRoute);
 app.use("/api/v1", patientRouter);
-app.use("/api/v1", astarRouter);
+//app.use("/api/v1", astarRouter);
 
 app.use(errorHandler);
 

@@ -6,19 +6,20 @@ const prescriptionSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
     required: true,
-    unique: true,
   },
   imageUrl: {
     type: String,
     trim: true,
     required: true,
-    unique: true,
   },
   publicId: {
     type: String,
     trim: true,
     required: true,
-    unique: true,
+  },
+  extraxtText: {
+    type: String,
+
   },
 });
 

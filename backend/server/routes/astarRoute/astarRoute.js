@@ -1,8 +1,8 @@
-import { astarAlgorithm } from "../../controllers/astarController/astarAlgorithm.js";
-import express from "express";
+//import { astarAlgorithm } from "../../controllers/astarController/astarAlgorithm.js";
+// import express from "express";
 
-const astarRouter = express.Router();
+// const astarRouter = express.Router();
 
-astarRouter.route("/astar").post(astarAlgorithm);
+// astarRouter.route("/astar").post(astarAlgorithm);
 
-export default astarRouter;
+// export default astarRouter;

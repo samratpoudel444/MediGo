@@ -13,7 +13,8 @@
     "prepare": "husky install",
     "seedAdmin": "node server/db/seeding/adminSeeding.js",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "migrateMedicine":"node server/db/migration/medicineMigration.js"
   },
   "author": "Samrat, Utsav, Jenish",
   "license": "ISC",
@@ -27,14 +28,17 @@
     "dayjs": "^1.11.13",
     "dotenv": "^16.5.0",
     "ioredis": "^5.6.1",
+    "jimp": "^0.22.12",
     "json-web-token": "^3.2.0",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.16.0",
     "mongoose": "^8.14.2",
     "multer": "^2.0.1",
     "node-cron": "^4.1.0",
+    "node-tesseract-ocr": "^2.2.1",
     "nodemailer": "^7.0.3",
     "otp-generator": "^4.0.1",
+    "sharp": "^0.34.2",
     "uuid": "^11.1.0",
     "yup": "^1.6.1"
   },
