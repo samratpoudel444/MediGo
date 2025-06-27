@@ -1,0 +1,6 @@
+medicineTable
+
+const fuzzyAlgorithm= (value)=>
+{
+
+}

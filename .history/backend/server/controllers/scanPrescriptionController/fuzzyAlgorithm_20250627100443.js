@@ -1,0 +1,6 @@
+const 
+
+const fuzzyAlgorithm= (value)=>
+{
+
+}

@@ -14,7 +14,7 @@
     "seedAdmin": "node server/db/seeding/adminSeeding.js",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "migrateMedicine":"node server/db/migration/medicineMigration.js"
+    "migrateMedicine": "node server/db/migration/medicineMigration.js"
   },
   "author": "Samrat, Utsav, Jenish",
   "license": "ISC",
@@ -39,6 +39,7 @@
     "nodemailer": "^7.0.3",
     "otp-generator": "^4.0.1",
     "sharp": "^0.34.2",
+    "socket.io": "^4.8.1",
     "uuid": "^11.1.0",
     "yup": "^1.6.1"
   },

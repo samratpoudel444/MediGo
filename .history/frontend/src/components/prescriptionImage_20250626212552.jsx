@@ -1,0 +1,1 @@
+import {prescriptionFormat} from "../assets/prescri"
