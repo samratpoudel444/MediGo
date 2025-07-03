@@ -1,0 +1,16 @@
+import image from "../assets/MEDIGO.png";
+
+const BlogCard= ()=>
+{
+    return (
+      <div className="flex flex-col justify-center items-center">
+        <div className="mt-10 bg-gray-100 w-[95%] h-40 shadow-sm hover:w-0.68">
+          <div className=" px-5 py-4 w-50">
+            <img src={image} alt="" />
+          </div>
+        </div>
+      </div>
+    );
+}
+
+export default BlogCard;
