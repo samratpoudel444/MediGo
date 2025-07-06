@@ -61,7 +61,7 @@ function App() {
             <Route path="CreateDoctor" element={<CreateDoctor />} />
             <Route path="AddPharmacy" element={<AddPharmacy />} />
             <Route path="ViewAnalytics" element={<Analytics />} />
-            <Route path="blogs" element={<CreateBlogs />} />
+            <Route path="ViewAnalytics" element={<Analytics />} />
           </Route>
         </Route>
         {/* <Route element={<ProtectedRoute allowedRole={["Patient"]} />}> */}

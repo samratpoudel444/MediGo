@@ -25,7 +25,7 @@ import GeolocationExample from "./components/location";
 import { useEffect } from "react";
 import { connectSocket, disconnectSocket } from "./components/utils/SocketInitialize";
 import CreateBlogs from "./components/Blogs/createBlogs";
-
+CreateBlogs
 
 
 function App() {
@@ -61,7 +61,6 @@ function App() {
             <Route path="CreateDoctor" element={<CreateDoctor />} />
             <Route path="AddPharmacy" element={<AddPharmacy />} />
             <Route path="ViewAnalytics" element={<Analytics />} />
-            <Route path="blogs" element={<CreateBlogs />} />
           </Route>
         </Route>
         {/* <Route element={<ProtectedRoute allowedRole={["Patient"]} />}> */}
@@ -74,10 +73,7 @@ function App() {
           element={<PrescriptionUpload />}
         ></Route>
         <Route path="/listBlogs" element={<BlogListPage />}></Route>
-        <Route
-          path="/navigatePharmacy"
-          element={<GeolocationExample />}
-        ></Route>
+        <Route path="/navigatePharmacy" element={<GeolocationExample />}></Route>
         <Route path="/Chat" element={<ChatApp />}></Route>
         {/* </Route> */}
         {/* <Route element={<ProtectedRoute allowedRole={["Doctor"]} />}> */}
