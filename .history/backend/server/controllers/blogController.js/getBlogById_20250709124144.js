@@ -1,0 +1,17 @@
+import blogTable from "../../db/models/blogModel";
+
+export default getBlogById = async (req, res, next) => {
+  try {
+    const id
+    const data = await blogTable.find({_id:id});
+    if (!data) {
+      return next({ code: 400, message: "Data not found" });
+    }
+    return response.status(201).json({ message: data });
+  } catch (err) {
+    return next({
+      code: err.code || 500,
+      message: err.message || "Internal Server error",
+    });
+  }
+};

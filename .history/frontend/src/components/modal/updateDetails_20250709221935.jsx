@@ -1,0 +1,4 @@
+const updateDetails= ()=>
+{
+    div
+}

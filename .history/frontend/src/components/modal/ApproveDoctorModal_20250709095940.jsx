@@ -1,0 +1,1 @@
+export default ApproveModal= (+<div className="in-[]:"></div>
