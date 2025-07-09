@@ -1,0 +1,6 @@
+const ShowAllPharmacies= ()=>
+{
+    return({
+        <paper>
+    })
+}

@@ -1,0 +1,6 @@
+const DeletePharmacy= ()=>
+{
+    return(
+        
+    )
+};

@@ -1,0 +1,1 @@
+deletePharmacy.jsx;
