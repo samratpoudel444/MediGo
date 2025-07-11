@@ -21,11 +21,7 @@ const blogSchema = mongoose.Schema({
     trim: true,
     required: true,
   },
-  userId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-        required: true,
-      },
+  
 });
 
 const blogTable= mongoose.model('blog', blogSchema)

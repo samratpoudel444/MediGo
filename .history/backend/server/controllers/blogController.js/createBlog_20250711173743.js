@@ -28,7 +28,7 @@ export const CreateBlogs = async (req, res, next) => {
       content,
       author,
       picture: result.secure_url,
-      userId:id
+      userid: req.user.Id
     });
 
     res.status(201).json({ message: "Blog created successfully", blog });

@@ -3,7 +3,6 @@ import { FaUserAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { MdLocalPharmacy } from "react-icons/md";
 import { SiLibreofficewriter } from "react-icons/si";
-import { useNavigate } from "react-router-dom";
 
 
 const cardData = [
@@ -25,7 +24,7 @@ const cardData = [
 ];
 
 const Dashboard = () => {
-  const navigate= useNavigate();
+  const Nav
   return (
     <div className="flex flex-col justify-center items-start gap-10">
       <div className="flex mt-24 ml-100">

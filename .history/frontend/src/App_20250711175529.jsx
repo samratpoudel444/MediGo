@@ -95,7 +95,7 @@ function App() {
           <Route path="/doctor/dashboard" element={<Dashboard />}></Route>
           <Route path="/doctor/patients" element={<ViewPatients />}></Route>
           <Route path="/doctor/blog" element={<CreateBlogs />}></Route>
-          <Route path="/doctor/showBlog" element={<ShowAllBlogsForDoctors />}></Route>
+          <Route path="/doctor/blog" element={<ShowAllBlogsForDoctors />}></Route>
         </Route>
 
         {/* </Route> */}

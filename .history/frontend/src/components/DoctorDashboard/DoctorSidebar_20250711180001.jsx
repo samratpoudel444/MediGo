@@ -20,7 +20,7 @@ const Buttons = [
     icon: <BookOnlineIcon />,
   },
   { name: "Write Blogs", link: "/doctor/blog", icon: <BookIcon /> },
-  { name: "Make Chat", link: "/chat", icon: <ChatIcon /> },
+  { name: "Make Chat", link: "/doctor/blog", icon: <ChatIcon /> },
 ];
 
 const DoctorSidebar = () => {

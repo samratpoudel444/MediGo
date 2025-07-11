@@ -5,7 +5,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import DeviceThermostatIcon from "@mui/icons-material/DeviceThermostat";
 import BookOnlineIcon from "@mui/icons-material/BookOnline";
 import BookIcon from "@mui/icons-material/Book";
-import ChatIcon from "@mui/icons-material/Chat";
+
 
 const Buttons = [
   { name: "Dashboard", link: "/doctor/dashboard", icon: <HomeIcon /> },
@@ -20,7 +20,7 @@ const Buttons = [
     icon: <BookOnlineIcon />,
   },
   { name: "Write Blogs", link: "/doctor/blog", icon: <BookIcon /> },
-  { name: "Make Chat", link: "/chat", icon: <ChatIcon /> },
+  { name: "Make Chat", link: "/doctor/blog", icon: <BookIcon /> },
 ];
 
 const DoctorSidebar = () => {

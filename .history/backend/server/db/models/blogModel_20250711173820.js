@@ -21,7 +21,7 @@ const blogSchema = mongoose.Schema({
     trim: true,
     required: true,
   },
-  userId: {
+  doctorId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
         required: true,

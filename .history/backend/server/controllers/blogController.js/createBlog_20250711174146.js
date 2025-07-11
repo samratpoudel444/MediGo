@@ -7,6 +7,7 @@ import blogTable from "../../db/models/blogModel.js";
 
 export const CreateBlogs = async (req, res, next) => {
   try {
+    console.log
     const id= req.user.id;
     const { title, content, author } = req.body;
     if (!title || !content || !author || !req.file) {
@@ -28,7 +29,7 @@ export const CreateBlogs = async (req, res, next) => {
       content,
       author,
       picture: result.secure_url,
-      userId:id
+      userid:id
     });
 
     res.status(201).json({ message: "Blog created successfully", blog });

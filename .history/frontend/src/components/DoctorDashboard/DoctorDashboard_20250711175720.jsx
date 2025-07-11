@@ -25,7 +25,7 @@ const cardData = [
 ];
 
 const Dashboard = () => {
-  const navigate= useNavigate();
+  const Navigate= useNavigate();
   return (
     <div className="flex flex-col justify-center items-start gap-10">
       <div className="flex mt-24 ml-100">

@@ -32,7 +32,6 @@ import AdminProfile from "./components/AdminProfile";
 import ShowAllPharmacies from "./components/ShowAllPharmacies";
 import ApproveDoctor from "./components/ApproveDoctor";
 import ShowAllBlogs from "./components/Blogs/showAllBlogs";
-import ShowAllBlogsForDoctors from "./components/Blogs/showAllBlogsForDoctor";
 
 function App() {
   useEffect(() => {
@@ -89,13 +88,11 @@ function App() {
         <Route path="/Chat" element={<ChatApp />}></Route>
         {/* </Route> */}
         {/* <Route element={<ProtectedRoute allowedRole={["Doctor"]} />}> */}
-
+        
         <Route element={<DoctorPage />}>
           <Route path="/doctor/viewprofile" element={<ViewProfile />}></Route>
           <Route path="/doctor/dashboard" element={<Dashboard />}></Route>
           <Route path="/doctor/patients" element={<ViewPatients />}></Route>
-          <Route path="/doctor/blog" element={<CreateBlogs />}></Route>
-          <Route path="/doctor/showBlog" element={<ShowAllBlogsForDoctors />}></Route>
         </Route>
 
         {/* </Route> */}

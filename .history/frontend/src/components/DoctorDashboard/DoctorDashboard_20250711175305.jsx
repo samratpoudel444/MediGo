@@ -1,31 +1,44 @@
 import Chart from "./chart";
 import { FaUserAlt } from "react-icons/fa";
+import { FaUserDoctor } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import { MdLocalPharmacy } from "react-icons/md";
 import { SiLibreofficewriter } from "react-icons/si";
-import { useNavigate } from "react-router-dom";
 
 
 const cardData = [
   {
     icon: <FaUserAlt className="text-3xl" />,
     text: "Show Users",
-    description: "View All the Users Associated with you",
-    navigate: "/a",
+    description: "View and manage all registered users",
+    navigate: "../ShowUsers",
     color: "bg-blue-500",
+  },
+  {
+    icon: <FaUserDoctor className="text-3xl" />,
+    text: "Show Doctors",
+    description: "Access healthcare professionals",
+    navigate: "../ShowDoctors",
+    color: "bg-green-500",
   },
 
   {
+    icon: <MdLocalPharmacy className="text-3xl" />,
+    text: "Show Pharmacy",
+    description: "Access healthcare Pharmacies",
+    navigate: "../ShowAllPharmacies",
+    color: "bg-yellow-500",
+  },
+  {
     icon: <SiLibreofficewriter className="text-3xl" />,
     text: "Show Blogs",
-    description: "Get All your blogs and manage it",
-    navigate: "/doctor/showBlogs",
+    description: "Get Blogs and manage the Blogs",
+    navigate: "../showAllBlogs",
     color: "bg-black",
   },
 ];
 
 const Dashboard = () => {
-  const navigate= useNavigate();
   return (
     <div className="flex flex-col justify-center items-start gap-10">
       <div className="flex mt-24 ml-100">
@@ -36,7 +49,7 @@ const Dashboard = () => {
             <motion.div
               key={index}
               className={`flex flex-col p-6 rounded-xl shadow-md cursor-pointer text-white ${item.color} 
-                hover:opacity-90 transition-opacity h-full w-1/2`}
+                hover:opacity-90 transition-opacity h-full`}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}

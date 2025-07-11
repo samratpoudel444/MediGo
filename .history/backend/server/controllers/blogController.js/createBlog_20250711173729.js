@@ -7,7 +7,7 @@ import blogTable from "../../db/models/blogModel.js";
 
 export const CreateBlogs = async (req, res, next) => {
   try {
-    const id= req.user.id;
+    const id= req.user.id
     const { title, content, author } = req.body;
     if (!title || !content || !author || !req.file) {
       return res.status(400).json({ message: "All fields are required" });
@@ -28,7 +28,6 @@ export const CreateBlogs = async (req, res, next) => {
       content,
       author,
       picture: result.secure_url,
-      userId:id
     });
 
     res.status(201).json({ message: "Blog created successfully", blog });
