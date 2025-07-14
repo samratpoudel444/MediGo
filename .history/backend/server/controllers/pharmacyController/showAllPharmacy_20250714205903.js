@@ -1,8 +1,13 @@
 
 import PharmacyTable from "../../db/models/pharmacyModel.js";
-import { findNearbyPharmacies } from "./utils/geoUtils.js";
+import { findNearbyPharmacies } from "/utils/geoU";
 
+/Users/samrat/Desktop/MediGo/backend/server/controllers/pharmacyController/utils
+/Users/samrat/Desktop/MediGo/backend/server/controllers/pharmacyController/showAllPharmacy.js
 
+/**
+ * Service layer function to get all pharmacies from database
+ */
 const getAllPharmacies = async () => {
   const pharmacies = await PharmacyTable.find();
   if (!pharmacies || pharmacies.length === 0) {
