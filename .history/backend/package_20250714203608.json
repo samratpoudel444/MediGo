@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "lint-staged": "lint-staged",
     "lint-fix": "eslint .--fix",
-     "prepare": "test $RENDER && echo 'Skip husky install on Render' || husky install",
+     "prepare": "test $RENDER && echo 'Skip husky install on Render' || husky install"
     "seedAdmin": "node server/db/seeding/adminSeeding.js",
     "start": "node index.js",
     "dev": "nodemon index.js",
