@@ -1,0 +1,14 @@
+import AppointmentTable from "../../db/models/appointmentModel";
+
+
+const getAllFinishedAppointment= async()=>
+{
+    try{    
+        const userId= req
+    }   
+    catch(err)
+    {
+        console.log(err);
+        return next({code:err.code || 500, message:err.message || "Internal Server Error"});
+    }
+}
