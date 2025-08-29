@@ -1,0 +1,6 @@
+Rema
+
+const checkRemainder= async()=>
+{
+
+}

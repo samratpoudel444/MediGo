@@ -1,4 +1,0 @@
-const viewAppointmentSchedule()=>
-{
-    return
-}

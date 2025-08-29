@@ -1,0 +1,23 @@
+import RemainderTable from "../../db/models/remainderModel.js"
+import cron from "node-cron";
+
+cron.schedule("* * * * *", () => {
+console.log("hello")
+});
+
+function getCurrentTime() {
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, "0"); // 0-23
+  const minutes = String(now.getMinutes()).padStart(2, "0"); // 0-59
+  return `${hours}:${minutes}`;
+}
+
+
+
+
+
+const checkRemainder= async()=>
+{
+    const time= getCurrentTime();
+    const data= await RemainderTable.find() 
+}
