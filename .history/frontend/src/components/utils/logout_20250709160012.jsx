@@ -1,1 +1,0 @@
-const LogoutHandler= (navigate)

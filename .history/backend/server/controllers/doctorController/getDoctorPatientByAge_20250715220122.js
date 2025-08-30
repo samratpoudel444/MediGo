@@ -1,1 +1,0 @@
-/Users/samrat/Desktop/MediGo/backend/server/controllers/doctorController/getDoctorPatientByAge.js

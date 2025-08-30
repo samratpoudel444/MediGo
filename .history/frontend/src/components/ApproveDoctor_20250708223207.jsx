@@ -1,6 +1,0 @@
-
-
-const ApproveDoctor= async()=>
-{
-    return()
-}

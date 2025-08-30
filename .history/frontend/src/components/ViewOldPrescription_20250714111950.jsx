@@ -1,6 +1,0 @@
-const ViewOldPrescription= ()=>
-{
-    return(
-        
-    )
-}

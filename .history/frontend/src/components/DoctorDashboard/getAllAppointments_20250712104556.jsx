@@ -1,1 +1,0 @@
-/Users/samrat/Desktop/MediGo/frontend/src/components/DoctorDashboard/getAllAppointments.jsx

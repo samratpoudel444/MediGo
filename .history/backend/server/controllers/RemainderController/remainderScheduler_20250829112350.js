@@ -1,6 +1,0 @@
-Rema
-
-const checkRemainder= async()=>
-{
-
-}

@@ -1,3 +1,0 @@
-
-
-const adminRouter = express.Router();

@@ -1,9 +1,0 @@
-
-const BlogCard= ()=>
-{
-    return(
-        {
-            
-        }
-    )
-}

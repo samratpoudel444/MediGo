@@ -1,7 +1,0 @@
-const SendMessage()=>
-{
-    return(
-        <>
-        </>
-    )
-}

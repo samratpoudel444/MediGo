@@ -1,7 +1,0 @@
-
-const Chart= ()=>
-{
-    return (
-        pie
-    )
-}

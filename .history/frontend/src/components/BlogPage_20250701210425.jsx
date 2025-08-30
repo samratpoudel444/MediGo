@@ -1,8 +1,0 @@
-blog
-
-const BlogPage= ()=>
-{
-    return({
-        
-    })
-}

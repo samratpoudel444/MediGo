@@ -1,6 +1,0 @@
-export default getAllBlogs= ()=>
-{
-    try{
-        
-    }
-}

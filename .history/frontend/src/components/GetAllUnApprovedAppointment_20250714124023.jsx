@@ -1,6 +1,0 @@
-
-
-constGetAllUnApprovedAppointmenr= async()=>
-{
-    
-}

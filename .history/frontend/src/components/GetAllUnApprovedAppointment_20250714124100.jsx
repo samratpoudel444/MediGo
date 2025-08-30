@@ -1,9 +1,0 @@
-
-console.log
-
-constGetAllUnApprovedAppointmenr=()=>
-{
-    return(
-
-    )
-}

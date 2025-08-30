@@ -1,6 +1,0 @@
-function Test()
-{
-    return(
-        A
-    )
-}

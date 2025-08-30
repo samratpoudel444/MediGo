@@ -1,6 +1,0 @@
-const ViewPatients= ()=>
-{
-    return(
-        <></>
-    )
-}

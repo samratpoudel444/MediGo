@@ -1,4 +1,0 @@
-const createRemainder= async(req, res, next)=>
-{
-    
-}

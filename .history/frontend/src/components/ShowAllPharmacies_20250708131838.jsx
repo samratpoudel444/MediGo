@@ -1,8 +1,0 @@
-
-
-const ShowAllPharmacies= ()=>
-{
-    return({
-        <paper>
-    })
-}

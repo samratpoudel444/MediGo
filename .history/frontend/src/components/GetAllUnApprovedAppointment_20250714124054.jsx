@@ -1,9 +1,0 @@
-
-
-
-constGetAllUnApprovedAppointmenr=()=>
-{
-    return(
-
-    )
-}

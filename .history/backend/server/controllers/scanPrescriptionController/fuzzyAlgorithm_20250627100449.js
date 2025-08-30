@@ -1,6 +1,0 @@
-medicineTable
-
-const fuzzyAlgorithm= (value)=>
-{
-
-}

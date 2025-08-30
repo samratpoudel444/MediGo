@@ -1,8 +1,0 @@
-
-
-const viewProfile= ()=>
-{
-    return(
-        <></>
-    )
-}

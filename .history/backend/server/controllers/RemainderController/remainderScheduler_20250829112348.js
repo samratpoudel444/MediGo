@@ -1,6 +1,0 @@
-
-
-const checkRemainder= async()=>
-{
-
-}

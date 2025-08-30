@@ -1,4 +1,0 @@
-const LogoutHandler= (navigate)=>
-{
-    try
-}
