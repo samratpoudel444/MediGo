@@ -10,6 +10,7 @@ export const markAppointmentCompleted = async (req, res, next) => {
     );
 
     if (!appointment) {
+        console.log("daa")
       return next ({
         code: 404,
         message: "Appointment not found",

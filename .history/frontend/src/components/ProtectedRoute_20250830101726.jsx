@@ -46,7 +46,7 @@ const ProtectedRoute = ({ allowedRole }) => {
     cacheTime: 10 * 60 * 1000,
     refetchOnWindowFocus: false,
     refetchOnMount: true, 
-    keepPreviousData: false, 
+    keepPreviousData: false, // prevent using old role
     retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
   });
 

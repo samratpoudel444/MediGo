@@ -16,7 +16,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { connectSocket } from "./utils/SocketInitialize";
 import { CircularProgress, Box } from "@mui/material";
-
+import React, { useState, useEffect } from "react";
 
 
 const userLogin= async(values)=>
@@ -31,6 +31,7 @@ const userLogin= async(values)=>
 }
 
 const LoginUsers = () => {
+    const [data, setData] = useState(null);
 
     const navigate= useNavigate();
 
@@ -42,7 +43,13 @@ const LoginUsers = () => {
         localStorage.setItem('token',data.token);
          connectSocket();
 
-        
+           useEffect(() => {
+             setTimeout(() => {
+               setData("Data loaded!");
+               setLoading(false);
+             }, 2000);
+           }, []);
+
         if (data.role === "Doctor") {
           navigate("/doctor/dashboard");
         } else if (data.role === "Admin") {

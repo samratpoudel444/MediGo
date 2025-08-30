@@ -13,9 +13,8 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { connectSocket } from "./utils/SocketInitialize";
-import { CircularProgress, Box } from "@mui/material";
 
 
 
@@ -25,7 +24,7 @@ const userLogin= async(values)=>
       "http://localhost:3000/api/v1/signInUsers",
       values
     );
-    console.log(response)
+    console.log
     return response.data;
 
 }
@@ -42,7 +41,6 @@ const LoginUsers = () => {
         localStorage.setItem('token',data.token);
          connectSocket();
 
-        
         if (data.role === "Doctor") {
           navigate("/doctor/dashboard");
         } else if (data.role === "Admin") {

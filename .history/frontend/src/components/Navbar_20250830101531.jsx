@@ -80,6 +80,7 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Profile Button */}
       <div className="absolute -top-[-22px] right-[20px] z-20 flex flex-col justify-center align-center gap-1">
         <Button
           onClick={() => setDropDown(!dropDown)}

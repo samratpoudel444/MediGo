@@ -31,6 +31,7 @@ const userLogin= async(values)=>
 }
 
 const LoginUsers = () => {
+    const [data, setData] = useState(null);
 
     const navigate= useNavigate();
 
@@ -42,17 +43,25 @@ const LoginUsers = () => {
         localStorage.setItem('token',data.token);
          connectSocket();
 
-        
-        if (data.role === "Doctor") {
-          navigate("/doctor/dashboard");
-        } else if (data.role === "Admin") {
-          navigate("/admin/ViewAnalytics");
-        } else if (data.role === "Patient") {
-          navigate("/Home");
-        } else {
-          navigate("/");
-        }
-      },
+        useEffect(() => {
+          if (mutation.isSuccess) {
+            setLoading(true);
+            setTimeout(() => {
+              setData("Data loaded!");
+              setLoading(false);
+            }, 2000);
+
+            if (mutation.data.role === "Doctor") {
+              navigate("/doctor/dashboard");
+            } else if (mutation.data.role === "Admin") {
+              navigate("/admin/ViewAnalytics");
+            } else if (mutation.data.role === "Patient") {
+              navigate("/Home");
+            } else {
+              navigate("/");
+            }
+          }
+        }, [mutation.isSuccess, mutation.data, navigate]);
 
       onError: (error) => {
         console.log(error);

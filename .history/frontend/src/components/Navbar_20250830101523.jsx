@@ -53,7 +53,7 @@ const Navbar = () => {
           </div>
         </div>
 
-
+        {/* Navigation Items */}
         <div className="w-[40%] flex items-center justify-start z-10">
           {navItems.map((item, index) => (
             <div
@@ -62,13 +62,14 @@ const Navbar = () => {
               onMouseLeave={() => setHoveredItem(null)}
               className="relative mt-6"
             >
-
+              {/* Changed href to to here */}
               <Link
                 to={item.link}
                 className="text-black mr-12 transition-colors duration-300 font-medium cursor-pointer relative hover:text-[#42cbf5] hover:scale-110 inline-block"
               >
                 {item.text}
 
+                {/* Underline animation */}
                 <div
                   className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-[#42cbf5] to-[#36b7e0] transition-all duration-300 ${
                     hoveredItem === item.text ? "w-full" : "w-0"
@@ -80,6 +81,7 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Profile Button */}
       <div className="absolute -top-[-22px] right-[20px] z-20 flex flex-col justify-center align-center gap-1">
         <Button
           onClick={() => setDropDown(!dropDown)}

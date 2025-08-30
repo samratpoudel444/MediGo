@@ -31,6 +31,7 @@ const userLogin= async(values)=>
 }
 
 const LoginUsers = () => {
+    const [data, setData] = useState(null);
 
     const navigate= useNavigate();
 
@@ -42,7 +43,13 @@ const LoginUsers = () => {
         localStorage.setItem('token',data.token);
          connectSocket();
 
-        
+           useEffect(() => {
+             setTimeout(() => {
+               setData("Data loaded!");
+               setLoading(false);
+             }, 2000);
+           }, []);
+
         if (data.role === "Doctor") {
           navigate("/doctor/dashboard");
         } else if (data.role === "Admin") {

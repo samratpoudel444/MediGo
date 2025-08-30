@@ -45,8 +45,8 @@ const ProtectedRoute = ({ allowedRole }) => {
     staleTime: 5 * 60 * 1000,
     cacheTime: 10 * 60 * 1000,
     refetchOnWindowFocus: false,
-    refetchOnMount: true, 
-    keepPreviousData: false, 
+    refetchOnMount: true, // fetch fresh role on mount
+    keepPreviousData: false, // prevent using old role
     retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
   });
 
@@ -55,6 +55,7 @@ const ProtectedRoute = ({ allowedRole }) => {
     return allowedRole.includes(role);
   }, [allowedRole, role]);
 
+  // Refetch role if token changes
   useEffect(() => {
     if (token) refetch();
   }, [token, refetch]);
