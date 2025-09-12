@@ -30,11 +30,11 @@ The chat feature allows sharing of messages, and prescription details securely.
 
 **Express.js**: Web server framework.
 
-**MySQL**: Database for storing whole system data.
+**MongoDB**: Database for storing whole system data.
 
 **Nodemailer**: Used to send emails for medications reminders and appointment remainder.
 
-**Cron Jobs**: For scheduling appointement priority and medications reminders.
+**Cron Jobs/ Scheduler**: For scheduling appointement priority and medications reminders.
 
 **Redis**: Redis is used for caching frequently accessed data to improve system performance.
 It helps in managing real-time data like notifications, sessions, and quick lookups efficiently.
